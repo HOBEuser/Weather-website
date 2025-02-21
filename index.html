@@ -1,55 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tornado Watch</title>
-    <style>
-        .header {
-            height: 30px;
-            color: darkblue;
-            text-align: center;
-        }
-
-        .buttono {
-            color: blue;
-            text-align: center;
-            height: 100px;
-        }
-        .button2 {
-            text-align: center;
-            width: 50px;
-            height: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="header pad">
+    <header class="header pad">
         Tornado Watch
-    </div>
-    <div class="header pad">
-        <button id="show-time" onclick="document.getElementById('demo').innerHTML = Date();">Get time and Date</button>
-        <p id="demo"> </p>
-    </div>
-    <div class="header pad">
-        <button id="show-radar">Show Radar Map</button>
-    </div>
-    <div id="radar-container"></div>
-
-    <script>
-        document.getElementById('show-radar').addEventListener('click', function () {
-            const iframe = document.createElement('iframe');
-            iframe.src = "https://www.rainviewer.com/map.html?type=radar&lat=40.7128&lon=-74.0060&zoom=8&opacity=0.8&basemap=1";
-            iframe.width = "100%";
-            iframe.height = "500";
-            iframe.frameBorder = "0";
-            iframe.loading = "lazy";
-            iframe.title = "Radar Map";
-
-            const container = document.getElementById('radar-container');
-            container.innerHTML = "";
-            container.appendChild(iframe);
-        });
-    </script>
+    </header>
+    <main>
+        <section class="pad">
+            <button id="show-time" onclick="showDateTime()">Get time and Date</button>
+            <p id="demo"></p>
+        </section>
+        <section class="pad">
+            <button id="show-radar">Show Radar Map</button>
+        </section>
+        <div id="radar-container"></div>
+    </main>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
